@@ -5,3 +5,16 @@ function getRandomHexColor() {
     .toString(16)
     .padStart(6, 0)}`;
 }
+
+const btn = document.querySelector('.change-color');
+const body = document.querySelector('body');
+const span = document.querySelector('.color');
+
+btn.addEventListener('click', colorChange);
+
+function colorChange() {
+  const hex = getRandomHexColor();
+  body.style.backgroundColor = hex;
+  span.style.backgroundColor = hex;
+  span.textContent = hex;
+}
